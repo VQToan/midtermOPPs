@@ -10,18 +10,16 @@ public class Room implements Serializable{
 	private String iDsRoom;
 	private Boolean status;
 	private int beds; // sá»‘ giÆ°á»�ng (1- Ä‘Æ¡n , 2- Ä‘Ã´i, 11- 2 láº»)
-	private Boolean kitchen;
 	private String typeRoom; // (option : N - normal, V - vip)
 	private int price;
 	public Room() {
 		super();
 	}
-	public Room(String iDsRoom, Boolean status, int beds, Boolean kitchen, String typeRoom, int price) {
+	public Room(String iDsRoom, Boolean status, int beds, String typeRoom, int price) {
 		super();
 		this.iDsRoom = iDsRoom;
 		this.status = status;
 		this.beds = beds;
-		this.kitchen = kitchen;
 		this.typeRoom = typeRoom;
 		this.price = price;
 	}
@@ -37,17 +35,11 @@ public class Room implements Serializable{
 	public void setStatus(Boolean status) {
 		this.status = status;
 	}
-	public int getbeds() {
+	public int getBeds() {
 		return beds;
 	}
-	public void setbeds(int beds) {
+	public void setBeds(int beds) {
 		this.beds = beds;
-	}
-	public Boolean getKitchen() {
-		return kitchen;
-	}
-	public void setKitchen(Boolean kitchen) {
-		this.kitchen = kitchen;
 	}
 	public String getTypeRoom() {
 		return typeRoom;
@@ -61,10 +53,21 @@ public class Room implements Serializable{
 	public void setPrice(int price) {
 		this.price = price;
 	}
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
 	@Override
 	public String toString() {
-		return "Room [iDsRoom=" + iDsRoom + ", status=" + status + ", beds=" + beds + ", kitchen="
-				+ kitchen + ", typeRoom=" + typeRoom + ", price=" + price + "]";
+		return "Room [iDsRoom=" + iDsRoom + ", status=" + status + ", beds=" + beds + ", typeRoom=" + typeRoom
+				+ ", price=" + price + "]";
 	}
-	
+	public String getXMLStringofRoom() {
+		return "	<Room>\r\n"
+				+ "		<iDsRoom>"+iDsRoom+"</iDsRoom>\r\n"
+				+ "		<status>"+String.valueOf(status)+"</status>\r\n"
+				+ "		<beds>"+String.valueOf(beds)+"</beds>\r\n"
+				+ "		<typeRoom>"+typeRoom+"</typeRoom>\r\n"
+				+ "		<price>"+String.valueOf(price)+"</price>\r\n"
+				+ "	</Room>";
+	}
 }

@@ -7,33 +7,29 @@ public class Customer implements Serializable{
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	private String no;
+	private String rollNo;
 	private String firstName;
 	private String fullName;
 	private String iD;
-	private Address address;
 	private String iDRoom;
-	private InfoTime InOut;
-	
-	public Customer(String no, String firstName, String fullName, String iD, Address address, String iDRoom,
-			InfoTime inOut) {
-		super();
-		this.no = no;
-		this.firstName = firstName;
-		this.fullName = fullName;
-		this.iD = iD;
-		this.address = address;
-		this.iDRoom = iDRoom;
-		InOut = inOut;
-	}
+	private InfoTime inOut;
 	public Customer() {
 		super();
 	}
-	public String getNo() {
-		return no;
+	public Customer(String rollNo, String firstName, String fullName, String iD, String iDRoom, InfoTime inOut) {
+		super();
+		this.rollNo = rollNo;
+		this.firstName = firstName;
+		this.fullName = fullName;
+		this.iD = iD;
+		this.iDRoom = iDRoom;
+		this.inOut = inOut;
 	}
-	public void setNo(String no) {
-		this.no = no;
+	public String getRollNo() {
+		return rollNo;
+	}
+	public void setRollNo(String rollNo) {
+		this.rollNo = rollNo;
 	}
 	public String getFirstName() {
 		return firstName;
@@ -53,12 +49,6 @@ public class Customer implements Serializable{
 	public void setiD(String iD) {
 		this.iD = iD;
 	}
-	public Address getAddress() {
-		return address;
-	}
-	public void setAddress(Address address) {
-		this.address = address;
-	}
 	public String getiDRoom() {
 		return iDRoom;
 	}
@@ -66,15 +56,33 @@ public class Customer implements Serializable{
 		this.iDRoom = iDRoom;
 	}
 	public InfoTime getInOut() {
-		return InOut;
+		return inOut;
 	}
 	public void setInOut(InfoTime inOut) {
-		InOut = inOut;
+		this.inOut = inOut;
+	}
+	public static long getSerialversionuid() {
+		return serialVersionUID;
 	}
 	@Override
 	public String toString() {
-		return "Customer [no=" + no + ", firstName=" + firstName + ", fullName=" + fullName + ", iD=" + iD
-				+ ", address=" + address + ", iDRoom=" + iDRoom + ", InOut=" + InOut + "]";
+		return "Customer [rollNo=" + rollNo + ", firstName=" + firstName + ", fullName=" + fullName + ", iD=" + iD
+				+ ", iDRoom=" + iDRoom + ", inOut=" + inOut + "]";
+	}
+	public String getXMLStringofCustomer() {
+		return "<Customer>\r\n"
+				+ "		<rollNo>"+rollNo+"</rollNo>\r\n"
+				+ "		<firstName>"+firstName+"</firstName>\r\n"
+				+ "		<fullName>"+fullName+" </fullName>\r\n"
+				+ "		<iD>"+iD+"</iD>\r\n"
+				+ "		<iDRoom>"+iDRoom+"</iDRoom>\r\n"
+				+ "		<inOut>\r\n"
+				+ "			<timeIn>"+inOut.getTimeIn()+"</timeIn>\r\n"
+				+ "			<dateIn>"+inOut.getdateIn()+"</dateIn>\r\n"
+				+ "			<timeOut>"+inOut.getTimeOut()+"</timeOut>\r\n"
+				+ "			<dateout>"+inOut.getdateOut()+"</dateout>\r\n"
+				+ "		</inOut>\r\n"
+				+ "	</Customer>";
 	}
 	
 }
