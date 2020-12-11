@@ -9,6 +9,33 @@ import java.util.ArrayList;
  * 
  * */
 public class OptionSearch {
+//	ArrayList<Customer> dataCustomers;
+//	String rollNo;
+//	String firstName;
+//	String fullName;
+//	String iD;
+//	String iDRom;
+//	String dateIn;
+//	String dateOut;
+//	String timeIn;
+//	String timeOut;
+//	ArrayList<Room> dataRooms;
+//	String iDRoom, status, beds, typeRoom, prices;
+//	
+//	public OptionSearch(ArrayList<Customer> dataCustomers, String rollNo, String firstName, String fullName, String iD,
+//			String iDRom, String dateIn, String dateOut, String timeIn, String timeOut) {
+//		super();
+//		this.dataCustomers = dataCustomers;
+//		this.rollNo = rollNo;
+//		this.firstName = firstName;
+//		this.fullName = fullName;
+//		this.iD = iD;
+//		this.iDRom = iDRom;
+//		this.dateIn = dateIn;
+//		this.dateOut = dateOut;
+//		this.timeIn = timeIn;
+//		this.timeOut = timeOut;
+//	}
 	//================ TIM THEO THONG TIN KHAC HANG======================//
 	public boolean check1(Customer data, String method, String key) {
 		if (key== "None") return true; 

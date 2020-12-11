@@ -13,7 +13,7 @@ import javax.xml.parsers.SAXParserFactory;
 import org.xml.sax.SAXException;
 
 public class DataFile {
-	public static void exportCustomer(ArrayList<Customer> dataCustomers) {
+	public void exportCustomer(ArrayList<Customer> dataCustomers) {
 		StringBuilder builder=new StringBuilder();
 		for (Customer customer :dataCustomers) {
 			builder.append(customer.getXMLStringofCustomer());
@@ -40,7 +40,7 @@ public class DataFile {
 			}
 		}
 		}	
-	public static ArrayList<Customer> importCustomer() {
+	public ArrayList<Customer> importCustomer() {
 		ArrayList<Customer> dataCustomers = new ArrayList<>();
 		FileInputStream fis = null;
 		try {
@@ -72,7 +72,7 @@ public class DataFile {
 		}
 		return dataCustomers;
 	}
-	public static void exportRoom(ArrayList<Room> dataRooms) {
+	public void exportRoom(ArrayList<Room> dataRooms) {
 		StringBuilder builder=new StringBuilder();
 		for (Room rom :dataRooms) {
 			builder.append(rom.getXMLStringofRoom());
@@ -84,7 +84,7 @@ public class DataFile {
 				+ "\n</RoomList>";
 		FileOutputStream fos= null;
 		try {
-			fos = new FileOutputStream("D:\\Room.xml");
+			fos = new FileOutputStream("D:\\Room1.xml");
 			byte[] data = xmlString.getBytes();
 			fos.write(data);
 	}catch (Exception e) {
@@ -99,7 +99,7 @@ public class DataFile {
 			}
 		}
 		}
-	public static ArrayList<Room> importRoom() {
+	public ArrayList<Room> importRoom() {
 		ArrayList<Room> dataRooms= new ArrayList<>();
 		FileInputStream fis = null;
 		try {

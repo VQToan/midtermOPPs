@@ -11,8 +11,6 @@ public class MainRun {
 		b.add(new Room("002", true, 2, "2", 524000));
 		b.add(new Room("003", false, 1, "3", 84864132));
 		b.add(new Room("004", true, 2, "1", 525424000));
-		//DataFile.exportRoom(b);
-		a= DataFile.importRoom();
 		for (Room room : a) {
 			System.out.println(room.toString());
 		}
